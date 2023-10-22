@@ -1,0 +1,70 @@
+<div class="page">
+  <div class="sidenav">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div class="contents"  >
+    <div class="info">
+      <h1>{{currentTherapy.therapyName}}</h1>
+      <p>{{currentTherapy.description}}</p>
+    </div>
+
+    <div class="carousel-container">
+      <button mat-icon-button (click)="prevDay()" [disabled]="currentIndex === 0">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      <div class="carousel">
+        <ng-container *ngFor="let day of visibleDays; let i = index">
+          <div class="day" [ngClass]="{'active': i === selectedDayIndex}" (click)="selectDay(i)">{{ day }}</div>
+        </ng-container>
+      </div>
+      <button mat-icon-button (click)="nextDay()" [disabled]="currentIndex === days.length - visibleDays.length">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+    </div>
+
+
+    <div class="info2">
+      <h2>{{this.currentDate.getTime() | date: 'yyyy/MM/dd'}}</h2>
+    </div>
+
+    <ng-container *ngIf="isTreatment; else appointmentView">
+      <mat-card class="video-card">
+        <div style="position: relative;">
+          <video width="100%" controls style="border-radius: 20px;">
+            <source [src]="videoUrl" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <mat-card-content>
+          <h2 mat-card-title>{{ treatment.title }}</h2>
+          <p mat-card-subtitle>{{ treatment.description }}</p>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+
+    <ng-template #appointmentView class="appointment">
+      <ng-container *ngIf="isAppointment; else noTreatmentMessage">
+        <mat-card class="appointment-card">
+          <h1>{{appointment.place}}</h1>
+        </mat-card>
+      </ng-container>
+    </ng-template>
+
+    <!-- Mensaje que se muestra cuando isTreatment es false -->
+    <ng-template #noTreatmentMessage class="free">
+      <mat-card class="rest_day">
+        <div class="free-text" style="float: left;">
+          <h2>Relax and Recharge!</h2>
+          <p>Congratulations on your outstanding progress! You're incredibly close to achieving your goal. Take a well-deserved break, treat yourself to something special, and let this day brighten your spirits!</p>
+        </div>
+        <div class="free-image" style="float: right;">
+          <img src="./assets/img/rest_day.png" alt="Rest Day Image">
+        </div>
+        <!-- Añadimos este elemento para limpiar los flotadores -->
+      </mat-card>
+    </ng-template>
+  </div>
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+

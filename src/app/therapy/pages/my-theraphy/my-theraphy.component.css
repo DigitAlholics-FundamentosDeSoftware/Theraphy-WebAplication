@@ -1,0 +1,231 @@
+  .page {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    background-color: #F5F5F8;
+    min-height: 100%;
+  }
+
+  .sidenav {
+    height: 100%;
+    background-color: white;
+  }
+
+
+
+  h1, p, span {
+    font-family: 'IBM Plex Sans', "Helvetica Neue", sans-serif;
+  }
+
+  .info  h1 {
+    font-size: 36px;
+    font-weight: 500;
+    color: #014DBF;
+  }
+
+  .contents {
+    width: 100%;
+    height: auto;
+    margin-left: 120px;
+    margin-right: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*
+     Centra horizontalmente el contenido */
+  }
+
+  .info {
+    width: 90%;
+  }
+
+  .info2  h2 {
+    margin-top: 40px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #014DBF;
+  }
+  .carousel-container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    background-color: white;
+    min-height: 80px; /* Establece una altura mínima para el carousel */
+    border-radius: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Resto de los estilos del carousel... */
+
+
+  /* Estilos para el carrusel */
+  .carousel {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centra horizontalmente los días */
+    gap: 25px; /* Añade espacio entre los días */
+    transition: transform 0.3s ease;
+    /* Agrega una transición suave para el desplazamiento */
+  }
+
+  /* Estilos para los días */
+  .day {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    padding: 8px 16px;
+    background-color: #B0D0FF;
+    color: white;
+    border-radius: 16px;
+    cursor: pointer;
+    height: 30px;
+    width: 60px;
+  }
+
+
+
+  .day.active {
+    background-color: #007bff;
+  }
+
+
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Establece el ancho de la tarjeta igual al del carrusel */
+  .video-card {
+    margin-top: 20px;
+    width: 90%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  /* Estilos para el video dentro de la tarjeta */
+  .video-card video {
+    padding-top: 20px;
+    width: 100%;
+    min-width: 1300px;
+    /* Limita el ancho del video al valor máximo */
+    height: auto;
+    margin: 0 auto;
+    min-height: 400px;/* Centra el video horizontalmente */
+  }
+
+  /* Estilos para el contenido de la tarjeta */
+  .video-card mat-card-content {
+    text-align: left;
+    padding: 16px;
+    margin-bottom: 30px;
+    /* Ajusta el ancho al 100% si es necesario */
+    /* max-width: 560px; Limita el ancho del contenido al valor máximo */
+  }
+
+  /* Estilos para el título */
+  .video-card mat-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left; /* Alinea el título a la izquierda */
+    margin-left: 16px; /* Añade un margen izquierdo para alinear con el borde izquierdo */
+  }
+
+  .video-card iframe {
+    width: 100%;
+    height: 550px;
+    border-radius: 20px 20px 0px 0px;
+    margin-bottom: 30px;
+  }
+
+
+
+
+
+  @media (max-width: 1500px) {
+
+
+    .carousel {
+      gap: 8px; /* Reduce el espacio entre los días */
+    }
+
+    .day {
+      width: 40px; /* Reduce el ancho de los días */
+    }
+
+    .video-card iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 20px 20px 0px 0px;
+    }
+  }
+
+
+  .rest_day {
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    width: 90%;
+    align-items: center; /* Alineación verticalmente */
+  }
+
+  .free-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center; /* Alineación verticalmente */
+  }
+
+  .free-text {
+    flex: 1; /* El texto toma el espacio restante */
+    text-align: left; /* Alineación del texto a la izquierda */
+    padding-left: 90px; /* Espacio entre el texto y el borde del mat-card */
+  }
+
+  .free-image {
+    text-align: right; /* Alineación de la imagen a la derecha */
+    padding: 20px; /* Espacio entre la imagen y el borde del mat-card */
+  }
+
+  .free-text h2 {
+    color: #014DBF;
+  }
+
+  @media (max-width: 1600px) {
+
+
+    .video-card video {
+      width: 100%;
+      min-width: 900px;
+    }
+
+
+  }
+
+  @media (max-width: 1100px) {
+    .rest_day {
+      flex-direction: column;
+    }
+
+    .free-text {
+      padding-left: 20px;
+    }
+
+    .video-card video {
+      width: 100%;
+      min-width: 300px;
+    }
+
+
+  }
+
