@@ -1,0 +1,222 @@
+.page {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  background-color: #F5F5F8;
+}
+
+.sidenav {
+  height: 100%;
+  background-color: white;
+}
+
+
+.contents {
+  width: 100%;
+  height: 100%;
+  margin-left: 120px;
+  margin-right: 48px;
+}
+
+
+
+.example-form {
+  display: flex;
+  align-items: center;
+  column-gap: 24px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.cards {
+  margin-bottom: 24px;
+  width: 100%;
+  margin-top: 24px;
+  max-height: calc(90vh - 150px);
+  overflow-y: scroll;
+}
+
+h1, p, span {
+  font-family: 'IBM Plex Sans', "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #014DBF;
+}
+
+mat-card-subtitle {
+  display: flex;
+  align-items: center;
+}
+
+mat-icon {
+  margin-bottom: 2px;
+}
+
+.example-form .example-full-width input {
+  width: 80%;
+}
+.example-card {
+  width: 99%;
+  margin-bottom: 30px;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.card-content img{
+  margin-left: 0.6%;
+  border-radius: 10px;
+  height:120px;
+  width: 120px
+
+}
+
+.card-details {
+  flex-grow: 1;
+  margin-top: 10px;
+}
+
+.card-button {
+  margin-right: 16px;
+}
+
+.rating-section {
+  margin-top: 10px;
+}
+
+.view-profile-btn {
+  margin-top: 10px;
+}
+
+.view-profile-section {
+  display: flex;
+  align-items: center;
+
+}
+.view-profile-text {
+  display: flex;
+  flex-direction: row;
+  color: black; /* Color del texto por defecto */
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 7px;
+
+}
+
+.view-profile-text:hover {
+  color: #014DBF; /* Color del texto por defecto */
+
+}
+.view-profile-text:hover .arrow-icon{
+  color: #014DBF;
+}
+
+.view-profile-text h2{
+  font-size: 17px;
+  font-weight: bolder;
+
+}
+
+
+
+
+.arrow-icon {
+  color:black;
+  width:auto;
+  font-size: 18px;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 9px;
+  margin-right: 8px;
+}
+
+
+.price-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+
+.price-section h4 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.price-section h5 {
+  font-size: 16px;
+  font-weight: normal;
+  color: #5b5b5b;
+  margin: 0;
+}
+
+.book-now-btn {
+  margin-top: 25px;
+  background-color: #014DBF;
+}
+
+
+.card-button button {
+  background-color: #014DBF;
+}
+
+.example-card mat-card-subtitle {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.card-details {
+  margin-left: 2%;
+}
+
+.card-content{
+  margin: 20px;
+}
+
+.search-icon:hover {
+  cursor: pointer;
+}
+
+.example-form mat-form-field {
+  border-color: #0C7075;
+  color: #0C7075;
+}
+
+
+
+.card-content img {
+  border-color: #0C7075;
+}
+
+.contents {
+  width: 100%;
+}
+
+.cards mat-card {
+  margin-bottom: 30px;
+}
+
+.star-icon{
+  color: goldenrod;
+  margin-right: 5px;
+}
+
+mat-card-subtitle {
+  display: flex;
+  align-items: center;
+}
