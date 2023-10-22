@@ -1,0 +1,132 @@
+/* Estilos para el contenedor de contenido principal */
+.sidenav-content {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 48px); /* Resta el alto del header (48px) */
+  overflow-y: auto; /* Agrega desplazamiento vertical si el contenido es demasiado largo */
+}
+
+.total {
+  background-color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1000; /* Asegura que esté por encima del contenido principal */
+  transition: width 0.3s; /* Agrega una transición para suavizar la expansión y retracción */
+  box-shadow: 0px 7px 8px 0px rgba(0, 0, 0, 0.20);
+
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* Header Logo */
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 18px;
+  color: #0069D0;
+}
+
+img {
+  width: 64px;
+}
+
+/* Estilos para el contenedor de Log Out */
+.block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 8px;
+  border-radius: 5px;
+}
+
+.mat-icon {
+  vertical-align: middle;
+}
+
+.sidenav-item:hover {
+  border-left: solid 3px blue;
+  border-radius: 5px;
+}
+
+.active-link {
+  border-left: solid 3px blue;
+  border-radius: 5px;
+  background: #e3e3e3;
+}
+
+.sidenav-item-text {
+  font-size: 14px;
+  margin-left: 14px;
+}
+
+.black-divider {
+  border-top: 1px solid  #0069D0; /* Color de línea negro */
+  margin: 5px;
+  box-shadow: 0px 5px 14px 0px rgba(0, 0, 0, 0.12), 0px 9px 10px 0px rgba(0, 0, 0, 0.14), 0px 5px 5px 0px rgba(0, 0, 0, 0.20);
+}
+
+/*Bottom*/
+.logout-container {
+  background-color: #B0D0FF;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.bottom {
+  margin-top: calc(100vh - 550px);
+}
+
+.card-title {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+}
+.card-title img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 10px;
+  display: flex;
+}
+
+/* Agrega estilos para el overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  z-index: 999; /* Asegura que esté por encima del sidenav */
+  display: none;
+}
+
+.overlay.expanded {
+  display: block; /* Muestra el overlay cuando el sidenav está expandido */
+}
+
+/* Estilos para el sidenav */
+.mat-drawer.mat-sidenav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1000; /* Asegura que esté por encima del contenido principal */
+  transition: transform 0.3s; /* Agrega una transición para suavizar la expansión y retracción */
+  transform: translateX(-100%); /* Inicialmente oculto a la izquierda */
+}
+
+
+
