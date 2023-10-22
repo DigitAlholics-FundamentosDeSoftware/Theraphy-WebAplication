@@ -1,0 +1,131 @@
+<div class="page">
+  <div class="sidenav">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div class="contents">
+
+    <div class="profile-header">
+      <div class="profile-header_left">
+          <svg (click)="goBack()" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 40 40" fill="none">
+            <path d="M33.3333 18.3331V21.6665H13.3333L22.5 30.8331L20.1333 33.1998L6.93332 19.9998L20.1333 6.7998L22.5 9.16647L13.3333 18.3331H33.3333Z" fill="#014DBF" style="cursor: pointer" />
+          </svg>
+        <h1>Book Consultation</h1>
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <img src="{{this.physiotherapist.photoUrl}}" alt="Italian Trulli">
+      <div class="custom-box">
+        <p>S/. {{physiotherapist.fees}} <span class="consult-text">/consult.</span></p>
+      </div>
+      <div class="description">
+        <h3>Dr. {{this.physiotherapist.user.firstname}} {{this.physiotherapist.user.lastname}}</h3>
+        <h4 class="text"><strong>Specialization:</strong> {{physiotherapist.specialization}}</h4>
+      </div>
+    </div>
+
+    <div class="flex-container2">
+      <div class="item">
+        <div class="icon"><img src="../../../../assets/img/patient-icon.ico" alt=""></div>
+        <div class="description">
+          <h4 class="text">{{this.physiotherapist.patientQuantity}}</h4>
+          <h4 class="text">Patients</h4>
+        </div>
+      </div>
+      <div class="item">
+        <div class="icon"><img src="../../../../assets/img/experience-icon.ico" alt=""></div>
+        <div class="description">
+          <h4 class="text">{{this.physiotherapist.yearsExperience}}</h4>
+          <h4 class="text">Years of experience</h4>
+        </div>
+      </div>
+      <div class="item">
+        <div class="icon"><img src="../../../../assets/img/rating-icon.ico" alt=""></div>
+        <div class="description">
+          <h4 class="text">{{ratingRounded}}</h4>
+          <h4 class="text">Rating</h4>
+        </div>
+      </div>
+      <div class="item">
+        <div class="icon"><img src="../../../../assets/img/review-icon.ico" alt=""></div>
+        <div class="description">
+          <h4 class="text">{{this.reviewQuantity}}</h4>
+          <h4 class="text">Reviews</h4>
+        </div>
+      </div>
+    </div>
+
+    <form [formGroup]="consultationForm" (ngSubmit)="onSubmit()">
+          <div class="form">
+            <div class="form__twosection">
+              <div class="form__section1">
+                <p>Day</p>
+                <mat-form-field appearance="outline" class="custom-form-field">
+                  <mat-label>Choose a date</mat-label>
+                  <input matInput [matDatepicker]="picker" (dateChange)="onDateChange($event.target.value)" class="custom-outline" formControlName="date" [(ngModel)]="consultation.date" required >
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker ></mat-datepicker>
+                </mat-form-field>
+                <div *ngIf="isSundaySelected" class="error-message">
+                  Can't select Sunday.
+                </div>
+                <div *ngIf="isBeforeDate" class="error-message">
+                  Can't select a date before today.
+                </div>
+
+              </div>
+
+              <div class="form__section2">
+                <p>Time</p>
+                <div class="form__section2__two">
+                  <mat-form-field appearance="outline"  >
+                    <mat-label>Selecciona la hora</mat-label>
+                    <mat-select [(ngModel)]="selectedHour" formControlName="hour"  (click)="onHourChange()">
+                      <mat-option *ngFor="let hour of hours" [value]="hour" required>{{ hour }}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+
+                  <mat-form-field appearance="outline" >
+                    <mat-label>Selecciona los minutos</mat-label>
+                     <mat-select [(ngModel)]="selectedMinute" formControlName="minute"  (click)="onHourMinute()">
+                       <mat-option *ngFor="let minute of minutes" [value]="minute" required>{{ minute }}</mat-option>
+                     </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form__section3">
+              <p>Location</p>
+              <mat-form-field appearance="outline">
+
+                <input matInput placeholder="Location" formControlName="place" [(ngModel)]="consultation.place" class="custom-outline" required>
+
+
+              </mat-form-field>
+
+            </div>
+
+            <div class="form__section4">
+              <p>Topic</p>
+              <mat-form-field appearance="outline">
+
+                <input matInput placeholder="Topic" formControlName="topic" [(ngModel)]="consultation.topic" class="custom-outline" required>
+
+
+              </mat-form-field>
+
+            </div>
+
+            <div class="form__button">
+              <button class="button" type="submit" mat-button  style="  background-color: #014DBF !important; color: white;" [disabled]="isSundaySelected || isBeforeDate">Go to pay</button>
+            </div>
+          </div>
+        </form>
+
+  </div>
+
+
+</div>
