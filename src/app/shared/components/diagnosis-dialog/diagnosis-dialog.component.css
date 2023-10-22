@@ -1,0 +1,52 @@
+.container{
+  width:50vw;
+  height:auto
+}
+
+.diagnosis{
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+.close{
+  position: absolute;
+  top:3px;
+  right:3px;
+}
+
+.close-icon{
+  color:#bbbbbb;
+  cursor: pointer;
+}
+
+
+.title{
+  border-bottom: 0.4px solid #bbbbbb ;
+
+}
+
+.details{
+  display: flex;
+  flex-direction: row;
+  gap:15px;
+}
+
+.content{
+  margin-bottom: 40px;
+
+}
+
+.doctor{
+  position: absolute;
+  bottom:0;
+  right:20px;
+
+}
+
+.doctor p{
+  color: #757575;
+  font-style: italic;
+}
+
+

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="diagnosis">
+    <div class="close">
+      <mat-icon class="close-icon" (click)="closeDialog()">close</mat-icon>
+    </div>
+
+  <div class="title">
+    <h1>Diagnosis</h1>
+  </div>
+  <div class="details">
+    <p><strong>Fecha:</strong> {{ data.date }}</p>
+    <p><strong>Hora:</strong> {{ data.hour }}</p>
+  </div>
+
+  <div class="content">
+    <p> {{ data.diagnosis }}</p>
+
+  </div>
+
+  <div class="doctor">
+    <p><strong>Dr. </strong> {{ data.physiotherapist_full_name }}</p>
+  </div>
+  </div>
+
+</div>
+
