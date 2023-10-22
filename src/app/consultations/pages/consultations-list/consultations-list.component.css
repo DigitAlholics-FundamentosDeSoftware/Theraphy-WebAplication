@@ -1,0 +1,345 @@
+.page {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  background-color: #F5F5F8;
+}
+
+.sidenav {
+  height: 100%;
+  background-color: white;
+}
+
+
+.contents {
+  width: 100%;
+  height: 100%;
+  margin-left: 120px;
+  margin-right: 48px;
+}
+
+
+
+.example-form {
+  display: flex;
+  align-items: center;
+  column-gap: 24px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.cards {
+  margin-bottom: 24px;
+  width: 100%;
+  margin-top: 24px;
+  max-height: calc(90vh - 150px);
+  overflow-y: scroll;
+}
+
+h1, p, span {
+  font-family: 'IBM Plex Sans', "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #014DBF;
+}
+
+mat-card-subtitle {
+  display: flex;
+  align-items: center;
+}
+
+mat-icon {
+  margin-bottom: 2px;
+}
+
+.example-form .example-full-width input {
+  width: 80%;
+}
+
+.button-container{
+  margin-bottom:20px;
+}
+
+.upcoming-button{
+  width:100%;
+  border:0.5px solid #014DBF;
+}
+
+.upcoming-button h2, .past-button h2{
+  font-size:15px;
+  font-weight: 500;
+  color:#014DBF
+}
+
+.upcoming-button-active h2, .past-button-active h2{
+  font-size:15px;
+  font-weight: 500;
+  color:white
+}
+
+.past-button{
+  margin-top:5px;
+  width: 100%;
+  border:0.5px solid #014DBF;
+}
+
+
+/* Estilos cuando el botón está activo (clic) */
+.upcoming-button-active {
+  width: 100%;
+  background-color: #014DBF; /* Fondo azul cuando está activo */
+}
+
+.past-button-active {
+  margin-top:5px;
+  width: 100%;
+  background-color: #014DBF;
+}
+
+.example-card {
+  width: 99%;
+  margin-bottom: 30px;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.card-content img{
+  margin-left: 0.6%;
+  border-radius: 10px;
+  height:120px;
+  width: 120px
+
+}
+
+.card-details {
+  flex-grow: 1;
+}
+
+.more-details{
+  flex-grow: 2;
+}
+
+.card-button {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacio entre el círculo y el botón */
+  margin-right: 20px;
+
+}
+
+.schedule-card-button{
+  display: flex;
+  margin-right:3.2%
+}
+
+.circle-with-text{
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+.schedule-status-circle {
+  width: 10px; /* Ancho del círculo */
+  height: 10px; /* Alto del círculo */
+  background-color: #216bff;
+  border-radius: 50%; /* Para crear un círculo */
+}
+
+
+.done-status-circle {
+  width: 10px; /* Ancho del círculo */
+  height: 10px; /* Alto del círculo */
+  background-color: #43df11;
+  border-radius: 50%; /* Para crear un círculo */
+}
+
+
+.schedule-status-text {
+  font-size: 16px; /* Tamaño del texto */
+  margin-top:-4.6px;
+  margin-left: 4px;
+  color: #216bff
+}
+
+.done-status-text {
+  font-size: 16px; /* Tamaño del texto */
+  margin-top:-4.6px;
+  margin-left: 4px;
+  color: #43df11
+}
+
+
+
+
+.rating-section {
+  margin-top: 10px;
+}
+
+.view-profile-btn {
+  margin-top: 10px;
+}
+
+.view-profile-section {
+  display: flex;
+  align-items: center;
+
+}
+.view-profile-text {
+  display: flex;
+  flex-direction: row;
+  color: black; /* Color del texto por defecto */
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 7px;
+
+}
+
+.view-profile-text:hover {
+  color: #014DBF; /* Color del texto por defecto */
+
+}
+.view-profile-text:hover .arrow-icon{
+  color: #014DBF;
+}
+
+.view-profile-text h2{
+  font-size: 17px;
+  font-weight: bolder;
+
+}
+
+
+
+
+.arrow-icon {
+  color:black;
+  width:auto;
+  font-size: 18px;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 9px;
+  margin-right: 8px;
+}
+
+
+.price-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+
+.price-section h4 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+.price-section h5 {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: normal;
+  color: #5b5b5b;
+}
+
+.book-now-btn {
+  background-color: #014DBF;
+}
+
+
+/* Estilos para el modal o popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.popup-content {
+  background-color: #fff;
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.close-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+
+.card-button button {
+  background-color: #014DBF;
+}
+
+.example-card mat-card-subtitle {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.card-details {
+  margin-left: 2%;
+}
+
+.card-content{
+  margin: 20px;
+}
+
+.search-icon:hover {
+  cursor: pointer;
+}
+
+.example-form mat-form-field {
+  border-color: #0C7075;
+  color: #0C7075;
+}
+
+
+
+.card-content img {
+  border-color: #0C7075;
+}
+
+.contents {
+  width: 100%;
+}
+
+.cards mat-card {
+  margin-bottom: 30px;
+}
+
+.star-icon{
+  color: goldenrod;
+  margin-right: 5px;
+}
+
+mat-card-subtitle {
+  display: flex;
+  align-items: center;
+}
