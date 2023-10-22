@@ -1,0 +1,48 @@
+<mat-sidenav #sidenav class="total" [mode]="isExpanded ? 'side' : 'over'" opened="true">
+  <div class="logo-container" (click)="isExpanded = !isExpanded">
+    <img src="assets/logo-image.png" alt="asdsd" class="logo-image">
+    <span *ngIf="isExpanded" class="logo-text">Theraphy</span>
+  </div>
+  <mat-divider class="black-divider"></mat-divider>
+  <div class="sidenav-content">
+
+    <!--<div class="overlay" [class.expanded]="isExpanded" (click)="isExpanded = !isExpanded"></div> -- Overlay para la opacidad -->
+
+    <mat-nav-list class="sidenav-menu">
+      <div class="block" *ngFor="let data of sidenavData">
+        <mat-list-item class="sidenav-item" routerLinkActive="active-link" [routerLink]="[data.routeLink]">
+          <mat-icon color="primary" matTooltipPosition="right">{{data.icon}}</mat-icon>
+          <span mat-line class="sidenav-item-text" *ngIf="isExpanded">{{ data.label }}</span>
+        </mat-list-item>
+      </div>
+    </mat-nav-list>
+  </div>
+
+
+  <div class="bottom">
+  <!-- Log Out en la parte inferior -->
+  <mat-nav-list>
+  <div class="logout-container">
+    <mat-list-item class="sidenav-item logout" routerLinkActive="false" (click)="openLogoutConfirmationDialog()">
+      <mat-icon color="primary"  matTooltipPosition="right">logout</mat-icon>
+      <span mat-line class="sidenav-item-text" *ngIf="isExpanded">Log Out</span>
+    </mat-list-item>
+  </div>
+  </mat-nav-list>
+
+  <mat-divider class="black-divider"></mat-divider>
+
+  <div class="profile-card">
+    <div>
+      <div class="card-title" *ngIf="patient$ | async as patient">
+        <img src="{{patient.photoUrl}}" alt="Profile Photo">
+        <p *ngIf="isExpanded">{{patient.user.firstname}} {{patient.user.lastname}}</p>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+</mat-sidenav>
+
+<div class="overlay" [class.expanded]="isExpanded" (click)="isExpanded = !isExpanded"></div>

@@ -1,0 +1,66 @@
+.container {
+  height: auto;
+
+}
+
+.log-out-form{
+  margin: 10px;
+  border: 1px solid #bbbbbb; /* Aumenté el grosor del borde */
+  border-radius: 5px;
+  text-align: center; /* Centra el contenido horizontalmente */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle-icon {
+  display: inline-block;
+  width: 40px; /* Tamaño del círculo */
+  height: 40px; /* Tamaño del círculo */
+  background-color: transparent; /* Color del fondo circular (puedes ajustarlo) */
+  border-radius: 50%;
+  border: 2px solid #484848;/* Hace que el fondo sea circular */
+  text-align: center;
+  line-height: 50px; /* Centra el icono verticalmente */
+  margin-top: 20px;
+  color: #fff; /* Color del icono (puedes ajustarlo) */
+}
+
+.logout-icon {
+  font-size: 26px; /* Ajusta el tamaño del icono según tus preferencias */
+  color: #484848
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 20px 0;
+}
+
+.buttons{
+margin-left: 10px;
+
+}
+
+.log-out-form-button-cancel, .log-out-form-confirm {
+  border: 1px solid transparent; /* Quita el borde por defecto */
+  background-color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  cursor: pointer;
+}
+
+.log-out-form-button-cancel:hover {
+  background-color: white;
+  color: red; /* Cambia el color del texto al pasar el cursor por encima */
+  border-color: red; /* Cambia el color del borde al pasar el cursor por encima */
+}
+
+.log-out-form-button-confirm:hover {
+  background-color: white;
+  color:  #2eda2e; /* Cambia el color del texto al pasar el cursor por encima */
+  /* Cambia el color del borde al pasar el cursor por encima */
+  border: 1px solid #2eda2e;
+}
