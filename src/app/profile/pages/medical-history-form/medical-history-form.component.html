@@ -1,0 +1,65 @@
+<main id="signupContainer" class="signup-container">
+  <div class="signup-section mat-elevation-z10" id="signupForm">
+    <div class="signup-form-container" >
+
+      <div class="signup-logo">
+        <img src="https://raw.githubusercontent.com/DigitAlholics-3-0/Front-End-Theraphy/master/src/assets/logo-image.png" alt="Theraphy logo" class="logo-image">
+        <span class="logo-text">My Medical History</span>
+      </div>
+
+      <span class="signup-form-title">Welcome, you are now entering your medical history.</span>
+      <p>Please enter your information</p>
+
+      <form [formGroup]="registerForm" (submit)="submitMedicalHistoryForm()" class="signup-form">
+
+        <div class="signup-form-general-data">
+          <div class="left-column">
+            <mat-form-field class="role-selection">
+              <mat-label>Select your Gender:</mat-label>
+              <mat-select formControlName="gender" [(ngModel)]="medicalHistory.gender">
+                <mat-option value="Male">Male</mat-option>
+                <mat-option value="Female">Female</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+              <mat-label>Size</mat-label>
+              <input type="text" matInput formControlName="size" [(ngModel)]="medicalHistory.size">
+            </mat-form-field>
+
+          </div>
+          <div class="right-column">
+            <mat-form-field appearance="fill" class="full-width">
+              <mat-label>Weight</mat-label>
+              <input type="text" matInput formControlName="weight" required [(ngModel)]="medicalHistory.weight">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+              <mat-label>BirthPlace</mat-label>
+              <input type="text" matInput formControlName="birthplace" [(ngModel)]="medicalHistory.birthplace">
+            </mat-form-field>
+          </div>
+
+          <div class="History">
+            <mat-form-field appearance="fill" class="full-width">
+              <mat-label>Hereditary History</mat-label>
+              <input type="text" matInput formControlName="hereditaryHistory" required [(ngModel)]="medicalHistory.hereditaryHistory">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+              <mat-label>Non Pathological History</mat-label>
+              <input type="text" matInput formControlName="nonPathologicalHistory" [(ngModel)]="medicalHistory.nonPathologicalHistory">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width same-width">
+              <mat-label>Pathological History</mat-label>
+              <input type="text" matInput formControlName="pathologicalHistory" [(ngModel)]="medicalHistory.pathologicalHistory">
+            </mat-form-field>
+          </div>
+          <button [disabled]="!registerForm.valid" mat-raised-button color="primary" type="submit" class="signup-button">Create Account</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>
+

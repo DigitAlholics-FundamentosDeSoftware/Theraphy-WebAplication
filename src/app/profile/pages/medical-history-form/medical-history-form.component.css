@@ -1,0 +1,90 @@
+.signup-container {
+  height: 100vh;
+  background-color: #007AF0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'IBM Plex Sans', "Helvetica Neue", sans-serif;
+}
+
+.signup-section {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 45%;
+  height: 100%;
+}
+
+.signup-form-container {
+  padding: 0 20%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 28px;
+}
+
+.signup-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo-image {
+  width: 56px;
+}
+
+.logo-text {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.signup-form-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.signup-form-general-data {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  text-align: center;
+  align-items: center;
+}
+
+.left-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.signup-button {
+  grid-column: span 2;
+  justify-self: center;
+  margin-top: -20px;
+  width: 100%;
+}
+
+.experience {
+  grid-column: 1 / span 2;
+  text-align: center;
+  margin-top: -20px;
+}
+
+.History {
+  grid-column: span 3;
+  justify-self: center;
+  margin-top: -20px;
+  width: 100%;
+}
+

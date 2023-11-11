@@ -1,0 +1,225 @@
+.page {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  background-color: #F5F5F8;
+  min-height: 100%;
+}
+.contents {
+  width: 100%;
+  height: auto;
+  margin-left:248px;
+  margin-right: 200px;
+
+}
+.sidenav {
+  height: 100%;
+}
+
+.contents .header {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.profile-photo-container img {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.profile-photo-container button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-photo-container button{
+  height: 200px;
+  width: 200px;
+}
+.description {
+  margin-left: 200px; /* Puedes ajustar este valor según tu preferencia */
+}
+.profile-header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.profile-header_left{
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.profile-header_left h1{
+  color: #014DBF;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+}
+
+.text {
+  font-weight: normal;
+}
+
+.text strong{
+  font-weight: 500;
+  color: gray;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos */
+  gap: 20px; /* Espacio entre la imagen y el texto */
+}
+
+
+.flex-container img {
+  height: 200px;
+  width: 220px;
+  border-radius: 10px;
+  margin-right: 140px; /* Añade un margen a la derecha de la imagen */
+}
+
+.flex-container .mat-icon {
+  vertical-align: middle;
+  margin-right: 10px;
+  display: inline-flex;
+  align-items: center;
+}
+.flex-container .description p mat-icon {
+  color: #014DBF;
+}
+.flex-container::after {
+  content: "";
+  height: 1px;
+  background-color: #014DBF;
+  position: absolute;
+  top: 371px;
+  right: 205px;
+  width: 75.8%;
+}
+
+.medical-history::after {
+  content: "";
+  height: 1px;
+  background-color: #014DBF;
+  position: absolute;
+  top: 515px;
+  right: 205px;
+  width: 75.8%;
+}
+
+.medical-description p {
+  margin: 8px;
+  margin-top: 5px;
+}
+
+
+.Gender {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Size {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Weight {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Birthday-place {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.medical-description {
+  margin-left: -8px; /* Eliminar el margen izquierdo predeterminado */
+}
+
+.recent-diagnosis .title {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.recent-no-diagnosis {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.card-diagnosis {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+  padding: 12px;
+  display: flex;
+  text-align: justify;
+  align-content: center;
+}
+
+.no-diagnosis  {
+  color: #0A83EE;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+.no-medicalHistory-card{
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+.no-medicalHistory-card button {
+  margin-top: 10px;
+}
+.page {
+  display: flex;
+  flex-direction: row;
+  background-color: #F5F5F8;
+  min-height: 100%;
+}
+
+.contents {
+  width: 100%;
+  height: auto;
+  margin-left: 248px;
+  margin-right: 200px;
+}
+
+.sidenav {
+  height: 100%;
+}
+
+.contents .header {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+

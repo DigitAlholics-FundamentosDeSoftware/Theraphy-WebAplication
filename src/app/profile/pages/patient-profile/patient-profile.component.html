@@ -1,0 +1,106 @@
+<div class="page">
+  <div class="sidenav">
+    <app-sidenav></app-sidenav>
+
+  </div>
+  <div class="contents">
+    <div class="profile-header">
+      <div class="profile-header_left">
+        <svg (click)="goBack()" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 40 40" fill="none">
+          <path d="M33.3333 18.3331V21.6665H13.3333L22.5 30.8331L20.1333 33.1998L6.93332 19.9998L20.1333 6.7998L22.5 9.16647L13.3333 18.3331H33.3333Z" fill="#014DBF"/>
+        </svg>
+        <h1>Patient's Profile</h1>
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <label for="fileInput" class="image-upload-button">
+        <div class="profile-photo-container">
+          <button (click)="openFileInput()"><img src="{{patient.photoUrl}}" alt="Edit"></button>
+        </div>
+      </label>
+      <input type="file" id="fileInput" (change)="uploadImage($event)" style="display: none">
+      <div class="description">
+        <h3>{{patient.user.firstname}} {{patient.user.lastname}}</h3>
+        <p> <mat-icon>face</mat-icon>{{patient.age}}</p>
+        <p> <mat-icon>cake</mat-icon>{{patient.birthdayDate}}</p>
+        <p><mat-icon> location_on</mat-icon>{{patient.location}}</p>
+        <p><mat-icon>favorite_border</mat-icon>{{patient.appointmentQuantity}}</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Medical History</h2>
+    <div *ngIf="medicalHistory">
+      <div class="medical-history-container">
+        <div class="medical-description">
+          <div class="Gender">
+            <p>Gender</p>
+            <p>{{this.medicalHistory.gender}}</p>
+          </div>
+          <div class="Size">
+            <p>Size</p>
+            <p>{{this.medicalHistory.size}}</p>
+          </div>
+          <div class="Weight">
+            <p>Weight</p>
+            <p>{{this.medicalHistory.weight}}</p>
+          </div>
+          <div class="Birthday-place">
+            <p>Birthday place</p>
+            <p>{{this.medicalHistory.birthplace}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="medical-history">
+        <h2 class="section-title">Hereditary History</h2>
+        <div class="medical-description">
+          <p>
+            {{this.medicalHistory.hereditaryHistory}}
+          </p>
+        </div>
+      </div>
+
+      <div class="medical-history">
+        <h2 class="section-title">Non-pathological history</h2>
+        <div class="medical-description">
+          <p>
+            {{this.medicalHistory.nonPathologicalHistory}}
+          </p>
+        </div>
+      </div>
+
+      <div class="medical-history">
+        <h2 class="section-title">Pathological history</h2>
+        <div class="medical-description">
+          <p>
+            {{this.medicalHistory.pathologicalHistory}}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!medicalHistory">
+      <div class="no-medicalHistory-card">
+        <p>You do not have a medical history yet</p>
+      </div>
+    </div>
+
+
+    <div class="consultations" >
+      <h2>Recent Diagnosis</h2>
+      <div class="recent-diagnosis" *ngIf="lastDiagnosis$ | async as diagnosis">
+        <div class="title">
+          <h3>{{diagnosis.date}}</h3>
+        </div>
+        <div class="card-diagnosis">
+          <p>{{diagnosis.diagnosis}}</p>
+        </div>
+      </div>
+      <div class="recent-no-diagnosis card-diagnosis" *ngIf="!(lastDiagnosis$ | async)">
+        <p>You don't have diagnoses yet</p>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
+
