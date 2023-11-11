@@ -1,0 +1,334 @@
+.page {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  background-color: #F5F5F8;
+}
+
+.contents {
+  width: 100%;
+  height: 100%;
+  margin-left: 120px;
+  margin-right: 48px;
+}
+
+.contents .header {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.profile-header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.profile-header_left{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.profile-header_left h1{
+  color: #014DBF;
+  /* v-text/h3 */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px; /* 104.167% */
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.card-consultation {
+  border-radius: 20px;
+  padding: 12px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+}
+
+.card-no-consultation {
+  border-radius: 20px;
+  padding: 12px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.card-no-consultation img {
+  width: 40px;
+  height: auto;
+}
+
+.profile-card {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 12px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.profile-card img{
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+
+}
+
+.description {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+.description p {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+.description h4 {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+.detail-consultation {
+  background-color: #014DBF;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 5px 53px;
+  border-radius: 8px;
+}
+.schedule {
+  color: #FFFFFF;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 6px;
+
+}
+
+.time {
+  color: #FFFFFF;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.text2 {
+  color: #FFFFFF;
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+/*UPCOMING APPOINTMENT*/
+.appointment-card {
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+  display: grid;
+  gap: 14px;
+  background-color: #FFFFFF;
+}
+
+.detail-appointment {
+  background-color: #D9E8FF;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 5px 53px;
+  border-radius: 8px;
+}
+
+.text3 {
+  color: #014DBF;
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+.example-label-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 10px 0;
+  max-width: 284px;
+}
+
+.progress-theraphy {
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.progress-theraphy .title {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+/*RECENT DIAGNOSIS*/
+
+.recent-diagnosis .title {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.recent-no-diagnosis {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card-diagnosis {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+  padding: 12px;
+  display: flex;
+  text-align: justify;
+}
+
+.no-diagnosis  {
+  color: #0A83EE;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+/*.sidenav {
+  height: 100%;
+}
+
+
+li{
+  list-style: none;
+}
+
+h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 500;
+
+  -webkit-user-select: none;
+}
+
+h1:hover{
+cursor: pointer;
+}
+
+h1,h3 {
+
+  font-family: 'IBM Plex Sans', "Helvetica Neue", sans-serif;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  margin-top: 5px;
+  border-radius: 30px;
+}
+
+mat-icon {
+  cursor: pointer;
+  font-size: 28px;
+  width: 40px;
+  height: 28px;
+}
+
+.patients-infos {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+}
+
+.patient-info{
+  margin-left: 4vw;
+  margin-right: 4vw;
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  border: 1px solid #007AF0;
+  width: 300px;
+}
+
+.patient-info_title{
+  border-top-right-radius: 24px;
+  border-top-left-radius: 24px ;
+  color: white;
+  padding-left: 25px;
+  padding-top: 10px;
+}
+
+.patient-info_title h1{
+  color: #AB00E7;
+}
+
+.patient-info_body{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 30px;
+}
+
+.date {
+  display: flex;
+  flex-direction: row;
+}
+
+.diagnosis {
+  margin-top: 10px;
+}
+
+
+.progress {
+  margin: 4vw;
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  border: 1px solid #007AF0;
+  width: auto;
+  padding: 10px;
+}
+
+.progress_title h1{
+  color: #AB00E7;
+  margin-bottom: 10px;
+}
+
+.progress-treatment {
+  display: flex;
+  flex-direction: row;
+}
+
+.progress-treatment_left {
+  margin-left: 20px;
+  width: 1000px;
+}
+
+.progress-treatment img{
+  margin-top: 10px;
+  width: 60px;
+  height: 60px;
+}
+
+@media (max-width: 900px) {
+  .patients-infos {
+    flex-direction: column;
+  }
+
+}*/
