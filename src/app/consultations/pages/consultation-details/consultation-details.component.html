@@ -1,0 +1,100 @@
+<div class="page">
+  <div class="sidenav">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div class="contents">
+
+    <div class="profile-header">
+      <div class="profile-header_left">
+        <svg (click)="goBack()"xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 40 40" fill="none">
+          <path d="M33.3333 18.3331V21.6665H13.3333L22.5 30.8331L20.1333 33.1998L6.93332 19.9998L20.1333 6.7998L22.5 9.16647L13.3333 18.3331H33.3333Z" fill="#014DBF" style="cursor: pointer" />
+        </svg>
+        <h1>Consultation's Details</h1>
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <img src="{{this.physiotherapist.photoUrl}}" alt="Italian Trulli">
+      <div class="custom-box">
+        <p>S/. {{physiotherapist.fees}} <span class="consult-text">/consult.</span></p>
+      </div>
+      <div class="description">
+        <h3>Dr. {{this.physiotherapist.user.firstname}} {{this.physiotherapist.user.lastname}}</h3>
+        <h4 class="text"><strong>Specialization:</strong> {{physiotherapist.specialization}}</h4>
+      </div>
+    </div>
+
+    <div class="flex-container2">
+      <div class="item">
+        <div class="icon"><img src="../../../../assets/img/patient-icon.ico" alt=""></div>
+        <div class="description">
+          <h4 class="text">{{this.physiotherapist.patientQuantity}}</h4>
+          <h4 class="text">Patients</h4>
+        </div>
+      </div>
+      <div class="item">
+        <div class="icon"><img src="../../../../assets/img/experience-icon.ico" alt=""></div>
+        <div class="description">
+          <h4 class="text">{{this.physiotherapist.yearsExperience}}</h4>
+          <h4 class="text">Years of experience</h4>
+        </div>
+      </div>
+      <div class="item">
+        <div class="icon"><img src="../../../../assets/img/rating-icon.ico" alt=""></div>
+        <div class="description">
+          <h4 class="text">{{this.physiotherapist.rating.toFixed(1)}}</h4>
+          <h4 class="text">Rating</h4>
+        </div>
+      </div>
+      <div class="item">
+        <div class="icon"><img src="../../../../assets/img/review-icon.ico" alt=""></div>
+        <div class="description">
+          <h4 class="text">{{this.reviewQuantity}}</h4>
+          <h4 class="text">Reviews</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Appointment's Details</h2>
+      <div class="hours-days">
+        <div class="day">
+          <h3>Date</h3>
+          <h4><b>{{this.consultation.date}}</b></h4>
+        </div>
+        <div class="day">
+          <h3>Time</h3>
+          <h4><b>{{this.consultation.hour}}</b></h4>
+        </div>
+        <div class="day">
+          <h3>Location</h3>
+          <h4><b>{{this.consultation.place}}</b></h4>
+        </div>
+        <div class="day">
+          <h3>Topic</h3>
+          <h4><b>{{this.consultation.topic}}</b></h4>
+        </div>
+        <div class="day">
+          <h3>Total</h3>
+          <h4><b>S/. {{this.physiotherapist.fees}}</b></h4>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="button-custom">
+
+    <app-payment
+      [price]="physiotherapist.fees"
+    ></app-payment>
+
+<!--            <button class="button" mat-flat-button style="background-color: #014DBF !important; color: white;" (click)="createConsultation()">Pay</button>-->
+
+    </div>
+
+    <br>
+
+  </div>
+
+
+</div>
