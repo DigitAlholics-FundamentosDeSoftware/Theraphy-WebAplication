@@ -1,0 +1,410 @@
+html{
+  font-family: Roboto, sans-serif;
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  background-color: #F5F5F8;
+
+}
+.contents {
+  width: 100%;
+  height: 100%;
+  margin-left:248px;
+  margin-right: 200px;
+
+}
+
+.sidenav {
+  height: 100%;
+}
+
+.contents .header {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+
+.profile-header{
+  display: flex;
+
+  justify-content: space-between;
+  width: 100%;
+}
+.profile-header_left{
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.profile-header_left h1{
+  color: #014DBF;
+  /* v-text/h3 */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px; /* 104.167% */
+}
+
+.profile-header_left svg{
+  cursor: pointer;
+}
+
+
+.custom-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #014DBF;
+  color: #fff;
+  padding: 5px 10px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex; /* Para alinear elementos verticalmente */
+  align-items: flex-start; /* Para alinear elementos en la esquina superior */
+  box-shadow: -5px 0 5px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.consult-text {
+  font-size: 12px; /* Tamaño de fuente pequeño */
+  color: #e0e0e0; /* Color de texto plomo */
+  margin-top: 2px; /* Espacio superior para separar del texto principal */
+}
+
+
+.text {
+  font-weight: normal;
+}
+
+
+.text strong{
+  font-weight: 500;
+  color: gray;
+}
+
+.flex-container {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 50px;
+  right:-5px;
+}
+
+
+.flex-container::after {
+  content: "";
+  height: 1px; /* Grosor del borde */
+  background-color: #014DBF; /* Color del borde */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 85%; /* Ancho del borde superior restante */
+}
+
+.flex-container2 {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+
+}
+.flex-container2 .icon {
+
+  background-color: #B0D0FF;
+  width: 80px;
+  height: 80px;
+  margin-top: 10px;
+
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  border-radius: 100px;
+}
+
+img {
+  height: 111px;
+  width:111px;
+  border-radius: 10px;
+}
+
+.item {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 41px;
+}
+
+.item .description {
+  text-align: center;
+}
+
+.item .icon img {
+  width: auto;
+  height: auto;
+  margin: 20px;
+}
+
+.section{
+   display: flex;
+   flex-flow: column wrap;
+   align-items: flex-start;
+   align-self: stretch;
+   position:relative;
+  width: 100%;
+
+}
+
+.section-title{
+  color: #000;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 32px; /* 160% */
+  letter-spacing: 0.25px;
+}
+
+.hours-days{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  align-self: stretch;
+  border-top: 1px solid #014DBF;
+  border-bottom: 1px solid #014DBF;
+}
+
+.day{
+  display: flex;
+  align-items: flex-start;
+  gap: 63px;
+  align-self: stretch;
+  height: 63px;
+}
+
+.day h3{
+  color: #000;
+  text-align: center;
+  /* v-text/h6 */
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 160% */
+  letter-spacing: 0.25px;
+  margin-left: 10px;
+}
+
+.day h4{
+  flex: 1 0 0;
+  color: #000;
+  text-align: right;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px; /* 150% */
+  margin-right: 10px;
+
+}
+
+
+
+/* Reviews */
+
+.reviews-cards-container {
+
+width: 100%;
+}
+
+.reviews-cards-container-blur{
+  width: 100%;
+
+}
+
+.reviews-cards-container-blur::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 102%;
+  left: 0; /* Ajusta la posición de inicio a la izquierda */
+  height: 85px; /* Ajusta la altura de la zona de desenfoque según sea necesario */
+  filter: blur(9px); /* Aplica un filtro de desenfoque en la zona inferior */
+  background: #F5F5F8; /* Fondo semitransparente en la zona inferior */
+
+}
+
+
+.review-card{
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  height: auto;
+
+  background: #F5F5F8;
+  border-bottom: 1px solid #bbbbbb;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.load-more-button {
+  position: absolute;
+  bottom:10px;
+  left: 48%;
+  transform: translateX(-50%);
+  z-index: 2;
+  cursor: pointer;
+}
+
+
+.load-more-button-bottom {
+  position: absolute;
+  top:1065px;
+  left: 50%;
+  transform: translateX(-80%);
+  z-index: 2;
+  cursor: pointer;
+
+}
+
+.button-content{
+  display: flex;
+  align-items: center;
+}
+
+.button-content h4{
+  font-weight: normal;
+  font-size: 20px;
+  color: #014DBF;
+}
+
+.arrow-icon {
+  font-size: 40px;
+  color: #014DBF;
+  transition: all 0.3s ease;
+}
+
+
+
+
+
+
+/*---*/
+.card-title{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin:15px;
+}
+
+.card-title h3{
+  font-weight: 450;
+}
+
+.card-title img{
+  border-radius:100px;
+  height: 60px;
+  width: 60px;
+}
+
+.card-description{
+  margin: 20px 20px 35px;
+  font-weight: 50;
+  font-size: 20px;
+}
+
+.review-stars{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  margin-right: 50px;
+}
+
+.mat-icon{
+  height: auto;
+  width: auto;
+}
+.mat-icon.icon {
+  font-size: 50px;
+  color: #ecca3a
+}
+
+.review-stars span{
+  font-size: 25px;
+}
+
+
+
+
+/*Jobs*/
+
+.jobs{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  align-self: stretch;
+  border-top: 1px solid #014DBF;
+  border-bottom: 1px solid #014DBF;
+}
+
+.jobs h2{
+  font-weight: normal;
+}
+
+.jobs h3{
+  font-weight: 400;
+}
+
+.jobs h4{
+  font-weight: 100;
+}
+
+.jobs-border{
+  width:100%;
+  border-bottom: 1px solid #bbbbbb ;
+  margin-bottom:10px
+}
+
+.button-container {
+  position: fixed;
+  bottom: 10px; /* Ajusta la distancia desde la parte inferior de la pantalla */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.button {
+  height: 50px;
+  width: 100%;
+  font-size: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
+}
+
+.not-found-div{
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+.not-found-div p{
+  color: gray;
+  margin-right: 50px;
+}
+
+.attribute{
+  font-size:15px;
+  font-weight: 500;
+  color: gray;
+}

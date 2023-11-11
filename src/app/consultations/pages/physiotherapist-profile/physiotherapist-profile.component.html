@@ -1,0 +1,199 @@
+
+<div class="page">
+  <div class="sidenav">
+    <app-sidenav></app-sidenav>
+
+  </div>
+  <div class="contents" *ngIf="physiotherapist$ | async as physiotherapist"  >
+    <div class="profile-header">
+      <div class="profile-header_left">
+        <svg (click)="goBack()" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 40 40" fill="none">
+          <path d="M33.3333 18.3331V21.6665H13.3333L22.5 30.8331L20.1333 33.1998L6.93332 19.9998L20.1333 6.7998L22.5 9.16647L13.3333 18.3331H33.3333Z" fill="#014DBF"/>
+        </svg>
+        <h1>Physiotherapist's Profile</h1>
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <img src="{{physiotherapist.photoUrl}}}" alt="Profile Photo">
+      <div class="custom-box">
+        <p>S/. {{physiotherapist.fees}} <span class="consult-text">/consult.</span></p>
+      </div>
+      <div class="description">
+        <h3>Dr. {{physiotherapist.user.firstname}} {{physiotherapist.user.lastname}}</h3>
+        <h4 class="text"><strong>Specialization:</strong>  {{physiotherapist.specialization}}</h4>
+      </div>
+    </div>
+
+    <div class="flex-container2">
+      <div class="item">
+        <div class="icon"><img src="../../../../assets/img/patient-icon.ico" alt=""></div>
+        <div class="description">
+          <h4 class="text">{{physiotherapist.patientQuantity}}</h4>
+          <h4 class="text">Patients</h4>
+        </div>
+      </div>
+      <div class="item">
+        <div class="icon"><img src="../../../../assets/img/experience-icon.ico" alt=""></div>
+        <div class="description">
+          <h4 class="text">{{physiotherapist.yearsExperience}}</h4>
+          <h4 class="text" >Years of experience</h4>
+        </div>
+      </div>
+      <div class="item">
+        <div class="icon"><img src="../../../../assets/img/rating-icon.ico" alt=""></div>
+        <div class="description">
+          <h4 class="text">{{ratingRounded}}</h4>
+          <h4 class="text">Rating</h4>
+        </div>
+      </div>
+      <div class="item">
+        <div class="icon"><img src="../../../../assets/img/review-icon.ico" alt=""></div>
+        <div class="description">
+          <h4 class="text">{{reviewsQuantity}}</h4>
+          <h4 class="text">Reviews</h4>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="section">
+      <h2 class="section-title">Working Hours</h2>
+      <div class="hours-days">
+        <div class="day">
+          <h3>Monday</h3>
+          <h4>00:00 - 00:00</h4>
+        </div>
+        <div class="day">
+          <h3>Tuesday</h3>
+          <h4>00:00 - 00:00</h4>
+        </div>
+        <div class="day">
+          <h3>Wednesday</h3>
+          <h4>00:00 - 00:00</h4>
+        </div>
+        <div class="day">
+          <h3>Thursday</h3>
+          <h4>00:00 - 00:00</h4>
+        </div>
+        <div class="day">
+          <h3>Friday</h3>
+          <h4>00:00 - 00:00</h4>
+        </div>
+        <div class="day">
+          <h3>Saturday</h3>
+          <h4>00:00 - 00:00</h4>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+
+
+      <div class="section"  >
+        <h2 class="section-title">Reviews</h2>
+
+        <div style="width: 100%" *ngIf=" 0 < reviews$.length && 3 <= reviews$.length">
+        <div  [ngClass]="{ 'reviews-cards-container-blur': !showMore, 'reviews-cards-container': showMore }" *ngFor="let review of reviews$; let i = index" >
+          <div class="review-card" *ngIf="i < numberOfVisibleReviews">
+            <div class="review-info" >
+              <div class="card-title">
+                <img src="{{review.patient.photoUrl}}" alt="Profile Photo">
+                <h3>{{review.patient.user.firstname}} {{review.patient.user.lastname}}</h3>
+              </div>
+              <h4 class="card-description">{{review.content}}</h4>
+            </div>
+            <div class="review-stars" >
+              <mat-icon class="icon">star</mat-icon> <span>{{review.score}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div [ngClass]="{ 'load-more-button': !showMore, 'load-more-button-bottom': showMore }" (click)="toggleShowMore()">
+          <div class="button-content">
+          <h4 *ngIf="!showMore" >Ver todas las reseñas</h4>
+          <mat-icon class="arrow-icon">{{ showMore ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
+          </div>
+        </div>
+
+        </div>
+
+        <div style="width: 100%" *ngIf=" 3> reviews$.length">
+        <div  class="reviews-cards-container" *ngFor="let review of reviews$; let i = index" >
+          <div class="review-card" *ngIf="i < numberOfVisibleReviews">
+            <div class="review-info" >
+              <div class="card-title">
+                <img src="{{review.patient.photoUrl}}" alt="Profile Photo">
+                <h3>{{review.patient.user.firstname}} {{review.patient.user.lastname}}</h3>
+              </div>
+              <h4 class="card-description">{{review.content}}</h4>
+            </div>
+            <div class="review-stars" >
+              <mat-icon class="icon">star</mat-icon> <span>{{review.score}}</span>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="not-found-div"  *ngIf=" 0>= reviews$.length">
+          <p>No reviews found</p>
+        </div>
+
+
+
+
+      </div>
+
+
+
+      <div class="section">
+      <h2 class="section-title">Jobs</h2>
+
+      <div style="width: 100%" *ngIf=" 0 < jobs$.length">
+
+      <div class="jobs">
+
+        <div [ngClass]="{ 'jobs-border': 1<jobs$.length && i <jobs$.length-1}" *ngFor="let job of jobs$; let i = index">
+          <h2>{{job.position}}</h2>
+          <h4><strong class="attribute">Organization:</strong> {{job.organization}}</h4>
+        </div>
+      </div>
+
+      </div>
+        <div class="not-found-div" *ngIf=" 0 >= jobs$.length">
+          <p>No jobs found</p>
+        </div>
+
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Certifications</h2>
+      <div style="width: 100%" *ngIf=" 0 < certifications$.length">
+      <div class="jobs">
+
+        <div [ngClass]="{ 'jobs-border': 1<certifications$.length && i <certifications$.length-1}" *ngFor="let certification of certifications$; let i = index">
+          <h3><strong class="attribute">Year:</strong> {{certification.year }}</h3>
+          <h2>{{certification.title}}</h2>
+          <h4><strong class="attribute">School:</strong> {{certification.school}}</h4>
+        </div>
+
+      </div>
+      </div>
+      <div class="not-found-div"  *ngIf=" 0>= certifications$.length">
+        <p>No certifications found</p>
+      </div>
+      <br>
+      <br>
+    </div>
+
+
+
+    <div class="button-container">
+      <button class="button" mat-flat-button style="  background-color: #014DBF !important; color: white;" [routerLink]="['/book-consultation',physiotherapist.id]">Book Consultation</button>
+
+    </div>
+
+<br>
+  </div>
+</div>
