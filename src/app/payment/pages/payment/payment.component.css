@@ -1,0 +1,38 @@
+.paymentContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.button {
+  height: 50px;
+  width:20%;
+  font-size: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+
+}
+
+.button:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
+}
+
+/*.custom-snackbar {*/
+/*  background-color: #3498db; !* Cambia este color al que desees *!*/
+/*  color: #fff; !* Cambia este color al que desees *!*/
+/*  background-image: url('https://images.vexels.com/media/users/3/152639/isolated/preview/506b575739e90613428cdb399175e2c8-dibujos-animados-de-astronauta-espacial.png'); !* Agrega la URL de tu imagen *!*/
+/*  background-size: cover;*/
+/*}*/
+

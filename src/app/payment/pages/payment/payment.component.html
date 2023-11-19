@@ -1,0 +1,17 @@
+<div class="paymentContent">
+  <h3>Enter your data</h3>
+  <mat-form-field  appearance="outline" style="width: 50%; opacity: 50%" >
+    <input matInput type="text" formControlName="name" placeholder="Name" required>
+  </mat-form-field>
+
+  <ngx-stripe-card style="width: 50%;"
+    [options]="cardOptions"
+    [elementsOptions]="elementsOptions"
+  ></ngx-stripe-card>
+  <div class="button-container">
+    <button class="button" type="submit" mat-button style="background-color: #014DBF !important; color: white;" (click)="createToken()">
+      Pay
+    </button>
+  </div>
+</div>
+
