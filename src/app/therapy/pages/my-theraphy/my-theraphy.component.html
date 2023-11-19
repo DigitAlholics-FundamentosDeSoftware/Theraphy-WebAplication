@@ -2,68 +2,197 @@
   <div class="sidenav">
     <app-sidenav></app-sidenav>
   </div>
-  <div class="contents"  >
-    <div class="info">
-      <h1>{{currentTherapy.therapyName}}</h1>
-      <p>{{currentTherapy.description}}</p>
-    </div>
 
-    <div class="carousel-container">
-      <button mat-icon-button (click)="prevDay()" [disabled]="currentIndex === 0">
-        <mat-icon>keyboard_arrow_left</mat-icon>
-      </button>
-      <div class="carousel">
-        <ng-container *ngFor="let day of visibleDays; let i = index">
-          <div class="day" [ngClass]="{'active': i === selectedDayIndex}" (click)="selectDay(i)">{{ day }}</div>
-        </ng-container>
+  <!-- Mensaje cuando noTherapy es verdadera -->
+  <div class="contents" *ngIf="noTherapy; else noTherapyMessage">
+    <mat-card class="rest_day" style="margin-top: 30px;">
+      <div class="free-text" style="float: left;">
+        <h2>Relax and Recharge!</h2>
+        <p>There are no therapies you are currently enrolled in. You can go to the navigation view to schedule a medical appointment.</p>
       </div>
-      <button mat-icon-button (click)="nextDay()" [disabled]="currentIndex === days.length - visibleDays.length">
-        <mat-icon>keyboard_arrow_right</mat-icon>
-      </button>
-    </div>
-
-
-    <div class="info2">
-      <h2>{{this.currentDate.getTime() | date: 'yyyy/MM/dd'}}</h2>
-    </div>
-
-    <ng-container *ngIf="isTreatment; else appointmentView">
-      <mat-card class="video-card">
-        <div style="position: relative;">
-          <video width="100%" controls style="border-radius: 20px;">
-            <source [src]="videoUrl" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <mat-card-content>
-          <h2 mat-card-title>{{ treatment.title }}</h2>
-          <p mat-card-subtitle>{{ treatment.description }}</p>
-        </mat-card-content>
-      </mat-card>
-    </ng-container>
-
-    <ng-template #appointmentView class="appointment">
-      <ng-container *ngIf="isAppointment; else noTreatmentMessage">
-        <mat-card class="appointment-card">
-          <h1>{{appointment.place}}</h1>
-        </mat-card>
-      </ng-container>
-    </ng-template>
-
-    <!-- Mensaje que se muestra cuando isTreatment es false -->
-    <ng-template #noTreatmentMessage class="free">
-      <mat-card class="rest_day">
-        <div class="free-text" style="float: left;">
-          <h2>Relax and Recharge!</h2>
-          <p>Congratulations on your outstanding progress! You're incredibly close to achieving your goal. Take a well-deserved break, treat yourself to something special, and let this day brighten your spirits!</p>
-        </div>
-        <div class="free-image" style="float: right;">
-          <img src="./assets/img/rest_day.png" alt="Rest Day Image">
-        </div>
-        <!-- Añadimos este elemento para limpiar los flotadores -->
-      </mat-card>
-    </ng-template>
+      <div class="free-image" style="float: right;">
+        <img src="./assets/img/rest_day.png" alt="Rest Day Image">
+      </div>
+      <!-- Añadimos este elemento para limpiar los flotadores -->
+    </mat-card>
   </div>
+
+
+
+
+  <ng-template #noTherapyMessage>
+    <div class="contents">
+      <div class="info">
+        <h1>{{currentTherapy.therapyName}}</h1>
+        <p>{{currentTherapy.description}}</p>
+      </div>
+
+      <div class="carousel-container">
+        <button mat-icon-button (click)="prevDay()" [disabled]="currentIndex === 0">
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <div class="carousel">
+          <ng-container *ngFor="let day of visibleDays; let i = index">
+            <div class="day" [ngClass]="{'active': i === selectedDayIndex}" (click)="selectDay(i)">{{ day }}</div>
+          </ng-container>
+        </div>
+        <button mat-icon-button (click)="nextDay()" [disabled]="currentIndex === days.length - visibleDays.length">
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+      </div>
+
+
+      <div class="info2">
+        <h2>{{this.currentDate.getTime() | date: 'yyyy/MM/dd'}}</h2>
+      </div>
+
+
+
+      <ng-container  *ngIf="isGreater; else endedTherapy">
+
+        <div class="ended_message">
+          <div class="ended-text" style="float: left;">
+            <h2 style="color: #014DBF">Your therapy has ended!</h2>
+          </div>
+          <div class="ended_image" style="float: right;">
+            <img class="image_physio_ended" mat-card-md-image [src]="currentTherapy.physiotherapist.photoUrl"  alt="Rest Day Image">
+            <div class="ended_image_text">
+              <h3>Dr. {{currentTherapy.physiotherapist.user.firstname + " " +
+              currentTherapy.physiotherapist.user.lastname
+                }}</h3>
+              <p>{{currentTherapy.physiotherapist.specialization}}</p>
+            </div>
+          </div>
+          <div class="ended_buttons">
+            <div class="home-button">
+              <button mat-raised-button style="background-color: #007bff; color: white"  [routerLink]="['/home-patient']" >Back Home</button>
+            </div>
+            <div class="review-button">
+              <button mat-raised-button style="background-color: #007bff; color: white" [routerLink]="['/add-review', this.currentTherapy.physiotherapist.id]">Add Review</button>
+            </div>
+          </div>
+          <!-- Añadimos este elemento para limpiar los flotadores -->
+        </div>
+
+
+      </ng-container>
+
+
+      <ng-template #endedTherapy class="ended" >
+        <ng-container  *ngIf="isTreatment; else appointmentView">
+
+        <mat-card class="video-card">
+          <div style="position: relative;">
+            <video width="100%" controls style="border-radius: 20px;" #myVideo>
+              <source [src]="videoUrl" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <mat-card-content>
+            <h2 mat-card-title>{{ treatment.title }}</h2>
+            <p mat-card-subtitle>{{ treatment.description }}</p>
+          </mat-card-content>
+        </mat-card>
+        </ng-container>
+
+      </ng-template>
+
+
+
+
+      <ng-template #appointmentView class="appointment">
+        <ng-container *ngIf="isAppointment; else noTreatmentMessage">
+          <mat-card class="appointment-card">
+            <div class="free-image" style="float: right;">
+              <img [src]="appointment.therapy.physiotherapist.photoUrl" alt="Physiotherapist Image">
+            </div>
+
+            <div class="appointment-text" style=" width: 70%">
+              <div class="only-text">
+                <mat-card-title><span class="appointment-title">You have a medical appointment!</span></mat-card-title>
+                <div class="subtitles-appointments">
+                  <div class="left-text">
+                    <mat-card-subtitle><span> <strong> Physiotherapist: </strong> Dr. {{appointment.therapy.physiotherapist.user.firstname
+                    + " " + appointment.therapy.physiotherapist.user.lastname
+                      }} </span></mat-card-subtitle>
+                    <mat-card-subtitle><span> <strong> Topic:</strong>
+                      {{appointment.topic}}
+                   </span></mat-card-subtitle>
+                    <mat-card-subtitle><span> <strong> Place:</strong>
+                      {{appointment.place}}
+                    </span></mat-card-subtitle>
+                    <mat-card-subtitle><span> <strong> Time:</strong>
+                      {{appointment.hour}}
+                </span></mat-card-subtitle>
+                  </div>
+
+                  <div class="right-text" *ngIf="showMessageAppointment">
+                    <mat-card-subtitle><span> <strong> Patient: </strong> {{appointment.therapy.patient.user.firstname
+                    + " " + appointment.therapy.patient.user.lastname
+                      }} </span></mat-card-subtitle>
+                    <mat-card-subtitle><span> <strong> DNI:</strong>
+                      {{appointment.therapy.patient.dni}}
+                   </span></mat-card-subtitle>
+                    <mat-card-subtitle><span> <strong> Edad:</strong>
+                      {{appointment.therapy.patient.age}}
+                    </span></mat-card-subtitle>
+                    <mat-card-subtitle><span> <strong> From:</strong>
+                      {{appointment.therapy.patient.location}}
+                </span></mat-card-subtitle>
+                  </div>
+
+                  <div class="right-part" *ngIf="showMessageAppointment">
+                    <!-- Lista de estado de la cita con viñetas -->
+                    <div class="appointment-status">
+                      <mat-card-subtitle>
+                        <span> <strong> Status: </strong></span>
+                      </mat-card-subtitle>
+                      <mat-card-subtitle style="margin-left: 20px">
+
+                        <li [ngClass]="{'green-text': toDo, 'red-text': !toDo}">Scheduled</li>
+                        <li [ngClass]="{'green-text': inProcess, 'red-text': !inProcess}">In process</li>
+                        <li [ngClass]="{'green-text': Done, 'red-text': !Done}">Finished</li>
+
+                      </mat-card-subtitle>
+                    </div>
+
+
+                  </div>
+
+                  <!-- Botón de diagnóstico -->
+                  <div class="diagnosis-button">
+                    <button mat-raised-button color="primary" (click)="openDiagnosisDialog()" [disabled]="!Done">Diagnosis</button>
+                  </div>
+
+
+                </div>
+
+
+              </div>
+
+            </div>
+
+          </mat-card>
+        </ng-container>
+      </ng-template>
+
+      <!-- Mensaje que se muestra cuando isTreatment es false -->
+      <ng-template #noTreatmentMessage class="free">
+        <mat-card class="rest_day">
+          <div class="free-text" style="float: left;">
+            <h2>Relax and Recharge!</h2>
+            <p>Congratulations on your outstanding progress! You're incredibly close to achieving your goal. Take a well-deserved break, treat yourself to something special, and let this day brighten your spirits!</p>
+          </div>
+          <div class="free-image" style="float: right;">
+            <img src="./assets/img/rest_day.png" alt="Rest Day Image">
+          </div>
+          <!-- Añadimos este elemento para limpiar los flotadores -->
+        </mat-card>
+      </ng-template>
+
+
+    </div>
+  </ng-template>
 </div>
 
 <script src="https://www.youtube.com/iframe_api"></script>

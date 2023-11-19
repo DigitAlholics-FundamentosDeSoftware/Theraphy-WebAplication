@@ -38,4 +38,21 @@ export class TreatmentService extends BaseService<Treatment> {
             catchError(this.handleError),  );
   }
 
+  getAllTreatmentsByTherapyId(therapyId: number):Observable<Treatment> {
+    const getTreatmentsByTherapyUrl = `${this.basePath}/byTherapyId/${therapyId}`;
+    const jwtToken = localStorage.getItem('jwtToken');
+
+    if (!jwtToken) {
+      throw new Error('Token JWT no encontrado en el localStorage.');
+    }
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${jwtToken}`
+    });
+
+    return this.http.get<Treatment>(getTreatmentsByTherapyUrl, {headers})
+      .pipe(
+        retry(2),
+        catchError(this.handleError),  );
+  }
+
 }
