@@ -1,0 +1,45 @@
+<div class="page">
+  <div class="sidenav">
+    <app-sidenav></app-sidenav>
+  </div>
+
+  <div class="contents">
+    <div class="header">
+      <div class="header_left">
+        <svg (click)="goBack()"  xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 40 40" fill="none">
+          <path  d="M33.3333 18.3331V21.6665H13.3333L22.5 30.8331L20.1333 33.1998L6.93332 19.9998L20.1333 6.7998L22.5 9.16647L13.3333 18.3331H33.3333Z" fill="#014DBF"/>
+        </svg>
+        <h1>Add Review</h1>
+      </div>
+    </div>
+
+    <div class="review-container">
+      <div class="background"><img src="https://www.zarla.com/images/zarla-chiropractor-logos-3936x2624-20210129.jpeg" alt="Italian Trulli"></div>
+      <div class="form" *ngIf="physiotherapist$ | async as physiotherapist">
+        <img src="{{physiotherapist.photoUrl}}" alt="Profile Photo">
+        <h2> Dr. {{physiotherapist.user.firstname}} {{physiotherapist.user.lastname}}</h2>
+        <h3> <strong>Specialization:</strong> {{physiotherapist.specialization}}</h3><br>
+        <h3> How was your experience with {{physiotherapist.user.firstname}}? </h3>
+
+        <div class="review-stars">
+          <div *ngFor="let star of stars" [ngClass]="[star.class]" (click)="selectStar(star.id)">
+            <mat-icon>{{star.icon}}</mat-icon>
+          </div>
+        </div>
+
+        <h4> Add review content</h4>
+
+        <div class="input-container">
+          <textarea class="input-text" placeholder="Write your review here" required [(ngModel)]="newReview.content"></textarea>
+        </div>
+
+        <div class="button-custom">
+          <button class="button" (click)="addReview()" mat-flat-button style="background-color: #014DBF !important; color: white;">Submit</button>
+        </div>
+        <br>
+      </div>
+    </div>
+
+  </div>
+
+</div>

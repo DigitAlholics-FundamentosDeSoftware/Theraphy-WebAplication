@@ -1,0 +1,187 @@
+html{
+  font-family: Roboto, sans-serif;
+}
+
+
+
+.page {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+
+}
+.contents {
+  width: 100%;
+  height: 100%;
+  margin-left:120px;
+  margin-right: 48px;
+
+}
+
+.sidenav {
+  height: 100%;
+}
+
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.header_left{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.header_left h1{
+  color: #014DBF;
+  /* v-text/h3 */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px; /* 104.167% */
+}
+
+.header_left svg{
+  cursor: pointer;
+
+}
+
+.review-container {
+  position: relative;
+  width: 1100px; /* Ancho del contenedor */
+  height:800px; /* Altura del contenedor */
+  border-radius: 20px; /* Bordes redondeados del contenedor */
+  overflow: hidden;
+  margin-left: 8%
+
+}
+
+
+
+.background img{
+  width: 1100px;
+  height: 400px; /* La mitad de la altura del contenedor */
+  border-radius: 20px; /* Bordes redondeados en la parte superior */
+}
+
+.form {
+  display: flex;
+  flex-direction: column; /* Alinea el contenido en columna */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  position: absolute;
+  top: 10%; /* La mitad de la altura del contenedor */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px; /* Ancho del cuadro */
+  height: auto; /* Altura del cuadro */
+  background-color:white; /* Color de fondo del cuadro con transparencia */
+  border-radius: 5%; /* Bordes redondeados del cuadro */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.form img{
+  margin-top: 30px;
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: lightgray 50% / cover no-repeat;
+
+}
+
+.form h2{
+  margin-top:30px
+}
+
+.form h3{
+  margin-top: 1px;
+  font-weight: normal;
+}
+
+.form h4{
+  align-self: start;
+  font-weight: 100;
+  margin-left: 5%;
+
+
+}
+
+strong{
+  font-weight: 500;
+  color: gray;
+}
+
+.review-stars{
+  display: flex; justify-content: center; align-items: center;
+
+}
+
+.stars-count{
+  display:flex;
+  flex-direction: row;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+
+.star {
+  font-size: 24px; /* Tamaño de la estrella */
+  color: gray; /* Color de la estrella por defecto */
+  cursor: pointer;
+  transition: color 0.3s ease-in-out; /* Agrega una transición suave al cambio de color */
+
+}
+
+.star:hover {
+  color: #fb8c00; /* Color de la estrella cuando el mouse está sobre ella */
+}
+
+.star-gold {
+  color: #fb8c00; /* Color de la estrella cuando está seleccionada */
+}
+
+
+.input-container {
+  width: 90%;
+}
+
+.input-text {
+  width: 100%;
+  height: 150px; /* Ajusta la altura según tus preferencias */
+  border: 2px solid #014DBF;
+  border-radius: 5px;
+  outline: none;
+  resize: vertical; /* Permite que el textarea se redimensione verticalmente */
+}
+
+.input-text::placeholder {
+  color: #999;
+}
+
+.input-text:focus {
+  border-color: #0A83EE;
+}
+
+.button-custom{
+  display:flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.button {
+  margin-top: 20px;
+  height: 50px;
+  width: 15%;
+  font-size: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Sombra con un poco de opacidad */
+  transition: all 0.3s ease; /* Animación de transición suave */
+}
+
+.button:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra más visible cuando el mouse se acerca */
+  transform: scale(1.05); /* Escala ligeramente el botón para dar la impresión de un efecto de elevación */
+}
